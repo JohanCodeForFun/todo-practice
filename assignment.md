@@ -1,7 +1,7 @@
 - [x] Use factories or constructors/classes to dynamically create todo objects.
 - [x] Brainstorm and define properties for todo items (minimum: title, description, dueDate, priority; optional: notes, checklist).
-- [ ] Implement projects or separate lists of todos.
-  - [ ] Create a default project for all todos when the app is first opened.
+- [x] Implement projects or separate lists of todos.
+  - [x] Create a default project for all todos when the app is first opened.
   - [ ] Allow users to create new projects.
   - [ ] Allow users to assign todos to specific projects.
 - [ ] Separate application logic (creating, updating, deleting todos, etc.) from DOM manipulation by using separate modules.

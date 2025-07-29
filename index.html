@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" type="module" defer></script>
-</head>
-<body>
-  <h1>Todo app!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="module" defer></script>
+  </head>
+  <body>
+    <h1>Todo app!</h1>
+    <h2 data-id="project">Project!</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Done</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Created</th>
+          <th>Due</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th data-id="done"></th>
+          <th data-id="title"></th>
+          <td data-id="description"></td>
+          <td data-id="priority"></td>
+          <td data-id="created"></td>
+          <td data-id="dueDate"></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>
