@@ -1,6 +1,6 @@
 import { formatDate } from "./utils.js";
 
-let projectHeader = document.querySelector('[data-id="project"]')
+let projectHeader = document.querySelector('[data-id="project-title"]')
 let todoDone = document.querySelector('[data-id="done"]')
 let todoTitle = document.querySelector('[data-id="title"]')
 let todoContent = document.querySelector('[data-id="description"]')
@@ -31,16 +31,16 @@ function createTodo(
 
 const newTodo = createTodo(
   undefined,
-  undefined,
+  true,
   "new todo",
-  "det här är en todo anteckning",
+  "Skapa första dåligt gränssnitt för att ha som mall att visa anteckningar",
   "2025-07-30",
   "genast"
 );
 
 projectHeader.textContent = newTodo.project
 
-todoDone.textContent = newTodo.content.done
+todoDone.checked = newTodo.content.done
 todoTitle.textContent = newTodo.content.title
 todoContent.textContent = newTodo.content.description
 todoCreated.textContent = newTodo.content.created
