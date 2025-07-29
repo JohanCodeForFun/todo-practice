@@ -1,26 +1,34 @@
 import { formatDate } from "./utils.js";
 
-function createTodo (title, description, dueDate, priority) {
-  const todoObject = {
-    title,
-    description,
-    dueDate,
-    created: formatDate(Date()),
-    priority,
-  }
-
-  return todoObject;
+function createTodo(
+  project = "nytt projekt",
+  title,
+  description,
+  dueDate,
+  priority
+) {
+  return {
+    project,
+    content: {
+      title,
+      description,
+      dueDate,
+      created: formatDate(Date()),
+      priority,
+    },
+  };
 }
 
 const newTodo = createTodo(
-  'new todo',
-  'det här är en todo anteckning',
-  '2025-07-30',
-  'genast'
+  undefined,
+  "new todo",
+  "det här är en todo anteckning",
+  "2025-07-30",
+  "genast"
 );
 
-console.log(newTodo)
+console.log(newTodo);
 
-// optional: 
-//  notes, 
+// optional:
+//  notes,
 //  checklist).
