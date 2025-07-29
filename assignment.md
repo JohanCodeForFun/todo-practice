@@ -1,0 +1,20 @@
+- [ ] Use factories or constructors/classes to dynamically create todo objects.
+- [ ] Brainstorm and define properties for todo items (minimum: title, description, dueDate, priority; optional: notes, checklist).
+- [ ] Implement projects or separate lists of todos.
+  - [ ] Create a default project for all todos when the app is first opened.
+  - [ ] Allow users to create new projects.
+  - [ ] Allow users to assign todos to specific projects.
+- [ ] Separate application logic (creating, updating, deleting todos, etc.) from DOM manipulation by using separate modules.
+- [ ] Design the User Interface to support:
+  - [ ] Viewing all projects.
+  - [ ] Viewing all todos in each project (show at least title and due date; visually indicate priority).
+  - [ ] Expanding a todo to see or edit its details.
+  - [ ] Deleting a todo.
+- [ ] Review other todo apps (Todoist, Things, any.do) for inspiration.
+- [ ] (Optional) Use external libraries like `date-fns` for date formatting and manipulation.
+- [ ] Add persistence using the Web Storage API:
+  - [ ] Save projects and todos to `localStorage` whenever they are created or updated.
+  - [ ] Load projects and todos from `localStorage` when the app starts.
+  - [ ] Ensure the app handles missing or invalid data in `localStorage` gracefully.
+  - [ ] Use DevTools to inspect and debug data stored in `localStorage`.
+  - [ ] Remember that `localStorage` uses JSON and cannot store functions; reattach methods to objects after loading.
