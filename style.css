@@ -1,3 +1,17 @@
 body {
-  /* background-color: red; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  max-width: 500px;
+}
+
+
+.todo-container {
+  border: 1px solid #333;
+  border-radius: 1rem;
+  padding: 1rem;
+  max-width: 500px;
 }
