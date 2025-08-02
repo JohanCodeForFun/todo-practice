@@ -102,10 +102,8 @@ const sortedTodos = todos.slice().sort((a, b) => {
   return 0;
 })
 
-let html = "";
-
-sortedTodos.map(todo => {
-  html += `
+projectGroup.innerHTML = sortedTodos.map(todo => {
+return `
   <h2 data-id="project-title">${todo.project}!</h2>
         <section class="todo-container">
           <h3 data-id="title">${todo.content.title}</h3>
@@ -130,7 +128,4 @@ sortedTodos.map(todo => {
             </tbody>
           </table>
         </section>
-  `
-})
-
-projectGroup.innerHTML = html;
+  `}).join("");
