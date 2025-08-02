@@ -8,6 +8,8 @@ let todoDueDate = document.querySelector('[data-id="dueDate"]')
 let todoCreated = document.querySelector('[data-id="created"]')
 let todoPriority = document.querySelector('[data-id="priority"]')
 
+const todos = [];
+
 function createTodo(
   project = "nytt projekt",
   done = false,
@@ -16,7 +18,7 @@ function createTodo(
   dueDate,
   priority
 ) {
-  return {
+  todos.push({
     project,
     content: {
       done,
@@ -26,23 +28,39 @@ function createTodo(
       created: formatDate(Date()),
       priority,
     },
-  };
+  });
 }
 
-const newTodo = createTodo(
-  undefined,
+const newTodo1 = createTodo(
+  "Webutveckling",
   true,
-  "new todo",
+  "Utveckla UI",
   "Skapa första dåligt gränssnitt för att ha som mall att visa anteckningar",
   "2025-07-30",
   "genast"
 );
+const newTodo2 = createTodo(
+  "Spelutveckling",
+  true,
+  "Hav som böljar",
+  "Lägg till hav som bööljar när det blåser",
+  "2025-07-30",
+  "genast"
+);
+const newTodo3 = createTodo(
+  "Spelutveckling",
+  true,
+  "Vind fysik",
+  "Lägg till vind fysik som får båten att segla iväg",
+  "2025-07-30",
+  "genast"
+);
 
-projectHeader.textContent = newTodo.project
+projectHeader.textContent = todos[1].project
 
-todoDone.checked = newTodo.content.done
-todoTitle.textContent = newTodo.content.title
-todoContent.textContent = newTodo.content.description
-todoCreated.textContent = newTodo.content.created
-todoDueDate.textContent = newTodo.content.dueDate
-todoPriority.textContent = newTodo.content.priority
+todoDone.checked = todos[1].content.done
+todoTitle.textContent = todos[1].content.title
+todoContent.textContent = todos[1].content.description
+todoCreated.textContent = todos[1].content.created
+todoDueDate.textContent = todos[1].content.dueDate
+todoPriority.textContent = todos[1].content.priority
