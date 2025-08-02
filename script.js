@@ -86,15 +86,6 @@ const newTodo5 = createTodo(
   "genast"
 );
 
-projectHeader.textContent = todos[1].project;
-
-todoDone.checked = todos[1].content.done;
-todoTitle.textContent = todos[1].content.title;
-todoContent.textContent = todos[1].content.description;
-todoCreated.textContent = todos[1].content.created;
-todoDueDate.textContent = todos[1].content.dueDate;
-todoPriority.textContent = todos[1].content.priority;
-
 const sortedTodos = todos.slice().sort((a, b) => {
   if (a.project < b.project) return -1;
   if (a.project > b.project) return 1;
@@ -105,14 +96,25 @@ const distinctProjects = [
   ...new Set(sortedTodos.map((project) => project.project)),
 ];
 
-tabList.innerHTML += distinctProjects
-  .map((project) => {
-    return `
-    <button class="tablinks" data-project="${project}">
-          ${project}
-        </button>`;
-  })
-  .join("");
+function createButtonsFromProjectList(stringArray) {
+    document.querySelectorAll('.tablinks.dynamic').forEach(btn => btn.remove());
+
+  let buttonList = stringArray.map(project => {
+    const button = document.createElement("button");
+    button.classList = "tablinks", "dynamic";
+    button.dataset.project = project;
+    button.textContent = project
+
+    return button;
+  });
+
+  buttonList.forEach(btn => tabList.appendChild(btn));
+
+  return buttonList;
+}
+
+createButtonsFromProjectList(distinctProjects);
+
 
 document.querySelectorAll(".tablinks").forEach((btn) => {
   btn.addEventListener("click", function (event) {
