@@ -101,3 +101,36 @@ const sortedTodos = todos.slice().sort((a, b) => {
   if (a.project > b.project) return 1;
   return 0;
 })
+
+let html = "";
+
+sortedTodos.map(todo => {
+  html += `
+  <h2 data-id="project-title">${todo.project}!</h2>
+        <section class="todo-container">
+          <h3 data-id="title">${todo.content.title}</h3>
+          <p data-id="description"></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Done</th>
+                <th>Created</th>
+                <th>Due</th>
+                <th>Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><input type="checkbox" ${todo.content.done ? "checked" : ""} name="" data-id="done" /></th>
+                <td data-id="priority">${todo.content.priority}</td>
+                <td data-id="created">${todo.content.created}</td>
+                <td data-id="dueDate">${todo.content.dueDate}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+  `
+})
+
+projectGroup.innerHTML = html;
