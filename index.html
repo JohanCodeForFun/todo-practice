@@ -10,29 +10,38 @@
   <body>
     <main>
       <h1>Todo app!</h1>
-      <h2 data-id="project-title">Project!</h2>
-      <section class="todo-container">
-        <h3 data-id="title"></h3>
-        <p data-id="description"></p>
+      <div class="tab">
+        <button class="tablinks" data-project="new">New project</button>
+        <button class="tablinks" data-project="webutveckling">
+          New project
+        </button>
+      </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Done</th>
-              <th>Created</th>
-              <th>Due</th>
-              <th>Priority</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th><input type="checkbox" name="" data-id="done" /></th>
-              <td data-id="priority"></td>
-              <td data-id="created"></td>
-              <td data-id="dueDate"></td>
-            </tr>
-          </tbody>
-        </table>
+      <section data-id="project-group">
+        <h2 data-id="project-title">Project!</h2>
+        <section class="todo-container">
+          <h3 data-id="title"></h3>
+          <p data-id="description"></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Done</th>
+                <th>Created</th>
+                <th>Due</th>
+                <th>Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><input type="checkbox" name="" data-id="done" /></th>
+                <td data-id="priority"></td>
+                <td data-id="created"></td>
+                <td data-id="dueDate"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </section>
     </main>
   </body>
