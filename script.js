@@ -16,13 +16,23 @@ function openProject(evt, input) {
     console.log("show create", input, "project!");
   } else {
     const listProject = todos.filter((filterProject) => input === filterProject.project)
-    console.log(
-      "list project:",
-      listProject
-    );
 
-    // projectGroup.innerHTML = "";
-    projectHeader.textContent = listProject[0].project
+    const { project } = listProject[0]
+
+    projectHeader.textContent = project
+
+    listProject.forEach(x => {
+
+      const section = document.createElement('section');
+      section.classList = 'todo-container'
+
+      const h3 = document.createElement('h3');
+      h3.classList = 'data-id=title'
+      h3.textContent = x.content.title
+      section.appendChild(h3)
+
+      console.log(project, x, section)
+    })
   }
 }
 
