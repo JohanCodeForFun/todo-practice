@@ -63,3 +63,44 @@ const newTodo5 = createTodo(
   "2025-07-30",
   "genast"
 );
+
+const newTodo6 = createTodo(
+  "Trädgård",
+  false,
+  "Plantera blommor",
+  "Plantera nya tulpanlökar i rabatten",
+  "2025-08-10",
+  "låg"
+);
+const newTodo7 = createTodo(
+  "Hälsa",
+  true,
+  "Springa 5km",
+  "Morgonlöpning i parken",
+  "2025-08-02",
+  "medel"
+);
+const newTodo8 = createTodo(
+  "Matlagning",
+  false,
+  "Testa nytt recept",
+  "Laga vegetarisk lasagne till middag",
+  "2025-08-07",
+  "hög"
+);
+const newTodo9 = createTodo(
+  "Läsning",
+  false,
+  "Läs en bok",
+  "Läs ut 'Sapiens' av Yuval Noah Harari",
+  "2025-08-15",
+  "låg"
+);
+const newTodo10 = createTodo(
+  "Resa",
+  false,
+  "Boka hotell",
+  "Boka hotell för helgresan till Göteborg",
+  "2025-08-12",
+  "hög"
+);
