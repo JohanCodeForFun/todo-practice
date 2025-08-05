@@ -104,3 +104,9 @@ const newTodo10 = createTodo(
   "2025-08-12",
   "hög"
 );
+
+export const sortedTodos = todos.slice().sort((a, b) => {
+  if (a.project < b.project) return -1;
+  if (a.project > b.project) return 1;
+  return 0;
+});

@@ -1,15 +1,7 @@
-import { formatDate } from "./utils.js";
-import { createTodo, todos } from "./createTodo.js";
+import { todos, sortedTodos } from "./createTodo.js";
 
 let tabList = document.querySelector(".tab-list");
 let projectHeader = document.querySelector('[data-id="project-title"]');
-let projectGroup = document.querySelector('[data-id="project-group"]');
-let todoDone = document.querySelector('[data-id="done"]');
-let todoTitle = document.querySelector('[data-id="title"]');
-let todoContent = document.querySelector('[data-id="description"]');
-let todoDueDate = document.querySelector('[data-id="dueDate"]');
-let todoCreated = document.querySelector('[data-id="created"]');
-let todoPriority = document.querySelector('[data-id="priority"]');
 
 function openProject(evt, input) {
   if (input === "new") {
@@ -96,12 +88,6 @@ function openProject(evt, input) {
     });
   }
 }
-
-const sortedTodos = todos.slice().sort((a, b) => {
-  if (a.project < b.project) return -1;
-  if (a.project > b.project) return 1;
-  return 0;
-});
 
 const distinctProjects = [
   ...new Set(sortedTodos.map((project) => project.project)),
