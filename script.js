@@ -56,7 +56,29 @@ function openProject(evt, input) {
         tr.appendChild(th)
       })
 
+      const tbody = document.createElement('tbody');
+      const tbodyList = [created, dueDate, priority];
+      const tr2 = document.createElement('tr')
+      console.log(tbodyList)
+
+      const tdDone = document.createElement('td')
+      const checkbox = document.createElement('input')
+      checkbox.type = 'checkbox'
+      checkbox.checked = !!done
+      tdDone.appendChild(checkbox)
+      tr2.appendChild(tdDone)
+
+      
+      tbodyList.map(element => {
+        const td = document.createElement('td')
+        td.textContent = element
+        tr2.appendChild(td)
+      })
+      tbody.appendChild(tr2)
+
       table.appendChild(thead)
+      table.appendChild(tbody)
+      
       section.appendChild(table)
 
       projectHeader.insertAdjacentElement("afterend", section);
@@ -98,36 +120,3 @@ document.querySelectorAll(".tablinks").forEach((btn) => {
     openProject(event, btn.dataset.project);
   });
 });
-
-// projectGroup.innerHTML = sortedTodos
-//   .map((todo) => {
-//     return `
-//   <h2 data-id="project-title">${todo.project}!</h2>
-//         <section class="todo-container">
-//           <h3 data-id="title">${todo.content.title}</h3>
-//           <p data-id="description"></p>
-
-//           <table>
-//             <thead>
-//               <tr>
-//                 <th>Done</th>
-//                 <th>Created</th>
-//                 <th>Due</th>
-//                 <th>Priority</th>
-//               </tr>
-//             </thead>
-//             <tbody>
-//               <tr>
-//                 <th><input type="checkbox" ${
-//                   todo.content.done ? "checked" : ""
-//                 } name="" data-id="done" /></th>
-//                 <td data-id="priority">${todo.content.priority}</td>
-//                 <td data-id="created">${todo.content.created}</td>
-//                 <td data-id="dueDate">${todo.content.dueDate}</td>
-//               </tr>
-//             </tbody>
-//           </table>
-//         </section>
-//   `;
-//   })
-//   .join("");
