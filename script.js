@@ -13,26 +13,54 @@ let todoPriority = document.querySelector('[data-id="priority"]');
 
 function openProject(evt, input) {
   if (input === "new") {
-    console.log("show create", input, "project!");
+    console.error("show create", input, "project!");
   } else {
-    const listProject = todos.filter((filterProject) => input === filterProject.project)
+    const listProject = todos.filter(
+      (filterProject) => input === filterProject.project
+    );
 
-    const { project } = listProject[0]
+    projectHeader.innerHTML = "";
+    let todoContainer = document.querySelectorAll('.todo-container')
+    todoContainer.forEach(section => section.remove())
 
-    projectHeader.textContent = project
+    const { project } = listProject[0];
 
-    listProject.forEach(x => {
+    projectHeader.textContent = project;
 
-      const section = document.createElement('section');
-      section.classList = 'todo-container'
+    listProject.forEach((x) => {
+      const { done, title, description, dueDate, created, priority } =
+        x.content;
 
-      const h3 = document.createElement('h3');
-      h3.classList = 'data-id=title'
-      h3.textContent = x.content.title
-      section.appendChild(h3)
+      const section = document.createElement("section");
+      section.classList = "todo-container";
 
-      console.log(project, x, section)
-    })
+      const h3 = document.createElement("h3");
+      h3.classList = "data-id=title";
+      h3.textContent = title;
+      section.appendChild(h3);
+      const descriptionParagraph = document.createElement("p");
+      descriptionParagraph.textContent = description;
+
+      section.appendChild(descriptionParagraph);
+
+      const tableList = ['Done', 'Created', 'Due', 'Priority'];
+      const table = document.createElement('table')
+      const thead = document.createElement('thead')
+      const tr = document.createElement('tr')
+      
+      thead.appendChild(tr)
+      tableList.forEach(x => {
+        const th = document.createElement('th')
+        
+        th.textContent = x
+        tr.appendChild(th)
+      })
+
+      table.appendChild(thead)
+      section.appendChild(table)
+
+      projectHeader.insertAdjacentElement("afterend", section);
+    });
   }
 }
 
@@ -47,24 +75,23 @@ const distinctProjects = [
 ];
 
 function createButtonsFromProjectList(stringArray) {
-    document.querySelectorAll('.tablinks.dynamic').forEach(btn => btn.remove());
+  document.querySelectorAll(".tablinks.dynamic").forEach((btn) => btn.remove());
 
-  let buttonList = stringArray.map(project => {
+  let buttonList = stringArray.map((project) => {
     const button = document.createElement("button");
-    button.classList = "tablinks", "dynamic";
+    (button.classList = "tablinks"), "dynamic";
     button.dataset.project = project;
-    button.textContent = project
+    button.textContent = project;
 
     return button;
   });
 
-  buttonList.forEach(btn => tabList.appendChild(btn));
+  buttonList.forEach((btn) => tabList.appendChild(btn));
 
   return buttonList;
 }
 
 createButtonsFromProjectList(distinctProjects);
-
 
 document.querySelectorAll(".tablinks").forEach((btn) => {
   btn.addEventListener("click", function (event) {
