@@ -23,7 +23,7 @@ export function createTodo(
 
 export const todos = [];
 
-const newTodo1 = createTodo(
+createTodo(
   "Webutveckling",
   true,
   "Utveckla UI",
@@ -31,7 +31,7 @@ const newTodo1 = createTodo(
   "2025-07-30",
   "genast"
 );
-const newTodo2 = createTodo(
+createTodo(
   "Spelutveckling",
   false,
   "Hav som böljar",
@@ -39,7 +39,7 @@ const newTodo2 = createTodo(
   "2025-07-30",
   "genast"
 );
-const newTodo3 = createTodo(
+createTodo(
   "Spelutveckling",
   false,
   "Vind fysik",
@@ -47,7 +47,7 @@ const newTodo3 = createTodo(
   "2025-07-30",
   "genast"
 );
-const newTodo4 = createTodo(
+createTodo(
   undefined,
   false,
   "Vind fysik",
@@ -55,7 +55,7 @@ const newTodo4 = createTodo(
   "2025-07-30",
   "genast"
 );
-const newTodo5 = createTodo(
+createTodo(
   "Webutveckling",
   false,
   "Vind fysik",
@@ -64,7 +64,7 @@ const newTodo5 = createTodo(
   "genast"
 );
 
-const newTodo6 = createTodo(
+createTodo(
   "Trädgård",
   false,
   "Plantera blommor",
@@ -72,7 +72,7 @@ const newTodo6 = createTodo(
   "2025-08-10",
   "låg"
 );
-const newTodo7 = createTodo(
+createTodo(
   "Hälsa",
   true,
   "Springa 5km",
@@ -80,7 +80,7 @@ const newTodo7 = createTodo(
   "2025-08-02",
   "medel"
 );
-const newTodo8 = createTodo(
+createTodo(
   "Matlagning",
   false,
   "Testa nytt recept",
@@ -88,7 +88,7 @@ const newTodo8 = createTodo(
   "2025-08-07",
   "hög"
 );
-const newTodo9 = createTodo(
+createTodo(
   "Läsning",
   false,
   "Läs en bok",
@@ -96,7 +96,7 @@ const newTodo9 = createTodo(
   "2025-08-15",
   "låg"
 );
-const newTodo10 = createTodo(
+createTodo(
   "Resa",
   false,
   "Boka hotell",
