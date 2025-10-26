@@ -1,6 +1,9 @@
 import { todos, sortedTodos } from "./createTodo.js";
 import { openProject } from "./openProject.js";
 
+// New comment.
+// Additional comment.
+
 let tabList = document.querySelector(".tab-list");
 
 const distinctProjects = [
