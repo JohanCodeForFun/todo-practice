@@ -15,7 +15,7 @@ export function createTodo(
       title,
       description,
       dueDate,
-      created: formatDate(Date()),
+      created: formatDate(new Date()),
       priority,
     },
   });
